@@ -1,9 +1,26 @@
-streamlit
-pandas
-numpy
-scikit-learn
-altair
-google-generativeai
-python-dotenv
-reportlab
-pyplot
+# Core framework
+streamlit>=1.20.0
+
+# Data processing
+pandas>=1.5.0
+numpy>=1.24.0
+
+# Machine learning
+scikit-learn>=1.2.0
+
+# Visualizations
+plotly>=5.11.0
+
+# Google GenAI SDK (recommended)
+google-genai>=1.50.0
+
+# Optional legacy client (kept for compatibility if needed)
+# google-generativeai>=0.0.0
+
+# Env var loader
+python-dotenv>=0.21.0
+
+# PDF export
+reportlab>=3.6.0
+
+# Note: remove `google-generativeai` unless you specifically need the legacy package.
