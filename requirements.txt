@@ -22,5 +22,3 @@ python-dotenv>=0.21.0
 
 # PDF export
 reportlab>=3.6.0
-
-# Note: remove `google-generativeai` unless you specifically need the legacy package.
