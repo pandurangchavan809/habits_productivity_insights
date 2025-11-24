@@ -1,0 +1,15 @@
+# Local environment variables
+.env
+
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+
+# OS files
+.DS_Store
+
+# Local sqlite db (uncomment if you don't want to include db in repo)
+# habits.db

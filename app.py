@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from io import BytesIO
 
-from config import ENABLE_AI, GEMINI_MODEL, GEMINI_API_KEY, ENABLE_PDF_EXPORT
+from config import ENABLE_AI, GEMINI_MODEL, ENABLE_PDF_EXPORT
 from database import create_tables, insert_log, fetch_logs, export_csv, update_log, fetch_log_by_id
 from data_processing import get_dataframe, weekly_summary, monthly_summary, activity_heatmap_data, compute_productivity_score
 from ml_utils import get_clusters, train_regression, predict_next
