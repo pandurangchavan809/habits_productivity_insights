@@ -50,9 +50,8 @@ def get_gemini_reco(df: pd.DataFrame, mode: str = "student") -> str:
     Includes full error handling, valid model usage, and stable response parsing.
     """
 
-    # ----------------------------------------------------
     # 1. API key validation
-    # ----------------------------------------------------
+
     if not GEMINI_API_KEY or GEMINI_API_KEY.strip() == "":
         return """
         ❌ **Gemini API key missing.**
@@ -64,22 +63,18 @@ def get_gemini_reco(df: pd.DataFrame, mode: str = "student") -> str:
 
         Restart the app after adding the key.
         """
-
-    # ----------------------------------------------------
-    # 2. Configure Gemini (only needed for the legacy client)
-    # The new `google-genai` client (`genai_v2`) uses `Client()` and reads the
-    # API key from the environment automatically. Only call `configure` when
-    # `google.generativeai` (legacy) is present.
-    # ----------------------------------------------------
+    
+    # 2. Configure Gemini
+  
     try:
         if OLD_GENAI_AVAILABLE and genai_v1 is not None:
             genai_v1.configure(api_key=GEMINI_API_KEY)
     except Exception as e:
         return f"❌ Failed to configure legacy Gemini client: {str(e)}"
 
-    # ----------------------------------------------------
+  
     # 3. Prepare Data Summary
-    # ----------------------------------------------------
+    
     try:
         avg_sleep = float(df['sleep_hours'].mean()) if 'sleep_hours' in df else 0
         avg_study = float(df['study_hours'].mean()) if 'study_hours' in df else 0
@@ -89,9 +84,7 @@ def get_gemini_reco(df: pd.DataFrame, mode: str = "student") -> str:
     except Exception as e:
         return f"❌ Error reading dataframe: {str(e)}"
 
-    # ----------------------------------------------------
     # 4. Build Prompt (Optimized)
-    # ----------------------------------------------------
     prompt = f"""
     Analyze this {mode}'s habit and productivity dataset and provide clear, highly actionable insights.
 
@@ -111,9 +104,8 @@ def get_gemini_reco(df: pd.DataFrame, mode: str = "student") -> str:
     Respond in a structured bullet-point format.
     """
 
-    # ----------------------------------------------------
     # 5. Generate Response (try new SDK first, then fallback)
-    # ----------------------------------------------------
+    
     last_exception = None
 
     # Try new google-genai client (preferred)

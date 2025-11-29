@@ -1,4 +1,3 @@
-# app.py
 # Smart Habit & Productivity Tracker - Clean Professional Edition
 import streamlit as st
 import pandas as pd
@@ -6,7 +5,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from io import BytesIO
-
 from config import ENABLE_AI, GEMINI_MODEL, ENABLE_PDF_EXPORT
 from database import create_tables, insert_log, fetch_logs, export_csv, update_log, fetch_log_by_id
 from data_processing import get_dataframe, weekly_summary, monthly_summary, activity_heatmap_data, compute_productivity_score

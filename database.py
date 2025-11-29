@@ -1,4 +1,3 @@
-# database.py
 import sqlite3
 from config import DB_NAME
 from typing import List, Tuple, Optional

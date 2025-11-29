@@ -14,7 +14,7 @@ plotly>=5.11.0
 # Google GenAI SDK (recommended)
 google-genai>=1.50.0
 
-# Optional legacy client (kept for compatibility if needed)
+# Optional legacy client --> kept for compatibility if needed
 # google-generativeai>=0.0.0
 
 # Env var loader

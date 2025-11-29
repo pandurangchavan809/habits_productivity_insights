@@ -46,6 +46,7 @@ def train_regression(df):
     try:
         if df.shape[0] < 2:
             return None, "Not enough data for regression (need at least 2 logs)."
+        
         # Features: sleep_hours, study_hours (lag), water_intake can be added
         X = df[["sleep_hours", "study_hours", "water_intake"]].fillna(0).values
         y_study = df["study_hours"].fillna(0).values

@@ -1,4 +1,3 @@
-# auth.py
 import streamlit as st
 from database import register_user, validate_user
 
@@ -8,9 +7,8 @@ def login_signup_ui():
 
     tab_login, tab_signup = st.tabs(["🔑 Login", "🆕 Sign Up"])
 
-    # ---------------------------
     # LOGIN TAB
-    # ---------------------------
+
     with tab_login:
         st.subheader("Login to your account")
 
@@ -30,9 +28,9 @@ def login_signup_ui():
                 else:
                     st.error("Invalid username or password.")
 
-    # ---------------------------
+   
     # SIGNUP TAB
-    # ---------------------------
+    
     with tab_signup:
         st.subheader("Create a new account")
 
